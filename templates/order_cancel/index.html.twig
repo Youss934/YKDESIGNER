@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} erreur de paiement -YK.DESIGN {% endblock %}
+
+{% block content %}
+<h2>erreur de paiement</h2>
+<p> bonjour {{Order.user.lastname}} {{order.user.firstname}}<br> il semblerait qu'il y'ai une erreur sur la commande n° {{order.reference}} <br>
+, une confirmation d'erreur a été envoyé à l'addresse {{order.user.email}}
+<a href ^path{{path('order')}} class="btn btn-success" >Reessayez le paiement</a>
+</p>
+
+{% endblock %}

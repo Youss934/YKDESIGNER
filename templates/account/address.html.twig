@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}YK.DESIGN - Mes adresses{% endblock %}
+
+{% block content %}
+<a href="{{path('account')}}" class="btn btn-info btn-sm float-right">Ajouter une adresse</a>
+
+    
+<h1>Mes adresses</h1>
+Bienvenue dans votre compte,<br>
+c'est ici que vous allez gérer vos adresses de livraisons.<br>
+<a href="{{path('account')}}"> Retour </a> 
+<hr>
+{% if app.user.addresses|length == 0 %}
+<p class= "text-center">
+
+    Vous n'avez pas encore ajouté d'adresse. Pour en ajouter une, veuillez <a href=""{{path('address_add')}}"">cliquer ici</a>.
+</p>
+{% else %}
+<div class="row">
+{% for address in app.user.addresses %}
+<div class="col-md-4"
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ address.name }}</h5>
+    <p class="card-text">{{address.address}}</p>
+    {{ adress.address }} <br>
+    {{ address.postal }} {{ address.city }} {{ adress.country }}
+    <a href="{path('account_address_edit',{'id' : address.id})}" >modifier</a>
+    <a href="path{path('account_address_delete',{'id' : address.id})}">supprimer</a> 
+  </div>
+</div>
+{% endfor %}
+
+
+   
+{% endif %}
+{% endblock %}

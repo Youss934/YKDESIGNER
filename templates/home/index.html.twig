@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block carousel %} {% endblock %}
+ 
+{% block content %}
+<h3>Nos meilleurs ventes</h3>
+<p>Découvrez nos meilleurs articles</p>
+  <div class="row">
+  {% for product in products %}
+  <div class="col-md-3">
+   {% include 'product/single_product.html.twig' %}
+  </div>  
+  {% endfor %}
+      <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Une qualité de crampons <span class="text-body-secondary">Quasiment inégalable.</span></h2>
+        <p class="lead">Nous vous proposons des crampons on ne peut plus qualitatif sur le marché</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{{asset('assets/img/trophe.png.jpg') }}" class="img-fluid" alt="le foot à une autre dimension">      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Venez en boutique <span class="text-body-secondary">et profitez de la qualité</span></h2>
+        <p class="lead">Nos partenaires saurons vous guider et vous montrer les articles les plus qualitatifs du marché</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+               <img src="{{asset('assets/img/gardien.png.jpg') }}" class="img-fluid" alt="des accessoires à la hauteur de vos attentes">      </div>
+
+      </div>
+    </div>
+
+    
+{% endblock  %}

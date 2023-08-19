@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} confirmation de commande -YK.DESIGN {% endblock %}
+
+{% block content %}
+<h2>confirmation de commande</h2>
+<p> bonjour {{Order.user.lastname}} {{order.user.firstname}}<br> votre commande n° {{order.reference}} <br>
+a bien été pris en compte, nous vous remercion, une confirmation a été envoyé à l'addresse {{order.user.email}}
+votre commande sera livré par : {{order.carrierName}} à l'addresse suivante : {{order.delivery}}
+pour suivre votre commande rendez-vous dans <a href="{{path('account_order')}}">Mon compte</a>
+</p>
+
+{% endblock %}

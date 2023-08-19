@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }} - YK.DESIGN {% endblock %}
+
+{% block content %}
+ <div class ="row">
+    <div class ="col-md-5">
+   <img src="/images/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+   </div>
+
+    <div class ="col-md-7 mx-autor">
+    <h3>{{ product.name }} </h3>
+    <p>{{ product.subtitle }}</p>
+    <span class="product-page-price">{{ product.price | number_format(2, '.', '') }} </span>
+
+    <hr>
+    <p> 
+    {{ product.description}}
+    </p>
+    <hr>
+    <a href="{{ path('add_to_cart', {'id': product.id}) }}" class="btn btn-primary">Ajoutez au panier</a>
+    </div>
+</div>
+<hr>
+<h3>Nos meilleurs ventes</h3>
+<p>Découvrez nos meilleurs articles</p>
+  <div class="row">
+  {% for product in products %}
+  <div class="col-md-3">
+   {% include 'product/single_product.html.twig' %}
+  </div>  
+  {% endfor %}
+{% endblock %}

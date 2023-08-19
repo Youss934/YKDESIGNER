@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}YK.DESIGN - Mon compte{% endblock %}
+
+{% block content %}
+
+<h1>Mon compte</h1>
+{% if is_granted('ROLE_ADMIN') %}
+<a href="/admin"> - Vous etes un admin, acceder au backoffice?<br> </a> {% endif %}
+{# {{ app.user }}  #}
+Bienvenue  dans votre compte,<br>
+c'est ici que vous allez gérer vos informations personnelles.
+<hr>
+<div class="row">
+<div class="col-md-4">
+<div class="account-item text-center">
+{# <img src="{{ asset('assets/img/purchasse.png') }}" alt="Modifier mes addresses"><br> #}
+<a href="{{ path ('account_address') }}"> - Modifier mes adresses</a>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="account-item text-center">
+{# <img src="{{ asset('assets/img/password.png') }}" alt="Modifier mon mot de passe"><br> #}
+<a href="{{ path ('account_password') }}"> - Modifier mon mot de passe </a>
+
+</div>
+</div>
+<div class="col-md-4">
+<div class="account-item text-center">
+{# <img src="{{ asset('assets/img/livraison.png') }}" alt="Modifier mes commandes"><br> #}
+<a href="{{ path ('account_order') }}"> - Mes commandes </a>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
